@@ -1,37 +1,45 @@
-# Afterhours — Event Discovery
+# Afterhours
 
-A responsive, dark themed event discovery and registration website built with semantic HTML, modern CSS, and vanilla JavaScript.
+Afterhours is a responsive event discovery and registration site for finding small local gatherings. It is built with semantic HTML, CSS, and vanilla JavaScript, with no build step or package dependencies.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder with any static web server. No build step or dependencies are required.
+Open `index.html` in a browser, or serve the project directory with any static web server. For example, if Python is installed:
+
+```sh
+python -m http.server 8000
+```
+
+Then visit <http://localhost:8000>.
 
 ## Features
 
-- Eight upcoming gatherings with individual detail views
-- Add, edit, and remove gatherings in the on-page manager; cards, search, filters, and registration choices update immediately
-- Live text search and category filters
-- Registration form with name, email, phone, and event validation
-- Events, successful registrations, and the selected theme are stored locally in the browser with Local Storage
-- Dark theme by default, with an optional light theme remembered
+- Browse eight sample events, search by text, and filter by category
+- Open an event for details and register with name, email, and phone validation
+- Add, edit, and remove events in the on-page manager
+- Save events, registrations, and the selected color theme in browser Local Storage
 - Responsive layouts for mobile, tablet, and desktop
-- Keyboard support for event cards and the `Ctrl/⌘ + K` search shortcut
+- Keyboard access for event cards and the `Ctrl`/`⌘` + `K` search shortcut
 
 ## Project files
 
-- `index.html` — page structure and dialogs
-- `styles.css` — design system, responsive layouts, and motion
-- `script.js` — event data, filtering, details, form validation, and local persistence
+- `index.html` — page structure, forms, and dialogs
+- `styles.css` — visual styles, responsive layouts, and motion
+- `script.js` — sample events, search, filtering, registration, and Local Storage
 
-## Project links
+## Publish with GitHub Pages
 
-- Live website: publish this folder with GitHub Pages after creating your repository
-- GitHub repository: add your repository URL here after creating it
+This is a static site and can be hosted from the repository root:
 
-The website is published with GitHub Pages from the `main` branch at the repository root. Pushing updates to `main` automatically republishes the site.
+1. Open the repository’s **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select the `main` branch and the `/ (root)` folder, then save.
+4. GitHub Pages will show the published site URL in the Pages settings. Future pushes to `main` will publish updates.
 
-## Notes
+Repository: [MahmudEkhlas/AfterHours](https://github.com/MahmudEkhlas/AfterHours)
 
-Event listings start as sample content. Use **Manage gatherings** below the event cards to add, edit, or remove listings. Those changes are saved in that browser's Local Storage and appear on reload, but are not shared with other visitors or devices. For a public multi-user event catalog, connect the site to a hosted database and admin authentication.
+## Data and external assets
 
-Photos load from Unsplash, and Google Fonts are used for typography, so those visual assets need an internet connection. Registration details also remain in the visitor's browser and are not sent to a server.
+The included event listings are sample content. Use **Manage gatherings** under the event cards to edit them. Changes and registration entries are stored only in the current browser’s Local Storage; they are not sent to a server or shared with other visitors and devices. A hosted database and server-side registration flow are needed for a shared, multi-user service.
+
+Event photography is loaded from Unsplash and typography from Google Fonts, so those assets require an internet connection. The site itself can be served as static files.
