@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111210" />
+  <meta name="description" content="Afterhours — find your people, discover your next favorite thing." />
+  <title>Afterhours — Find your people</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Afterhours home"><span class="brand-mark">a.</span><span>afterhours<span class="brand-period">.</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#events">Explore</a><a class="nav-link" href="#about">How it works</a>
+    </nav>
+    <div class="header-actions"><button class="icon-button theme-toggle" aria-label="Switch color theme" title="Switch color theme"><span class="theme-icon">☾</span></button><a class="button button-small button-dark" href="#events">Find an event <span aria-hidden="true">↗</span></a></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> THE CITY IS YOURS AFTER DARK</div>
+        <h1>Good nights.<br />Better <span class="serif-accent">people.</span><br /><span class="hero-outline">Real life.</span></h1>
+        <p class="hero-description">A dinner that runs late. A room full of makers. Your next favorite people are already out there.</p>
+        <a class="button button-dark hero-cta" href="#events">Explore what’s on <span aria-hidden="true">↘</span></a>
+        <div class="social-proof"><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt=""/><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt=""/><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=80&q=80" alt=""/><span>+</span></div><p><strong>2,400+</strong> people found their thing</p></div>
+      </div>
+      <div class="hero-visual"><div class="hero-photo"></div><div class="floating-note"><span class="note-star">✳</span><span>Make room for<br /><strong>a little wonder.</strong></span></div><div class="photo-caption"><span class="caption-line"></span> COMMUNITY, IRL <span>✳</span></div><div class="hero-orbit" aria-hidden="true">✳</div></div>
+      <a class="scroll-hint" href="#events"><span>SCROLL TO EXPLORE</span><span>↓</span></a>
+    </section>
+
+    <section class="events-section" id="events">
+      <div class="section-heading"><div><div class="eyebrow section-eyebrow">CURATED FOR YOUR NEXT NIGHT OUT</div><h2>Make tonight <span class="serif-accent">a story.</span></h2></div><p>Small rooms, good energy, and a reason<br class="desktop-only"/> to put your phone away.</p></div>
+      <div class="discover-tools"><div class="filters" role="group" aria-label="Filter events by category"><button class="filter-chip selected" data-category="All">All events <span class="filter-count">08</span></button><button class="filter-chip" data-category="Wellness">Wellness</button><button class="filter-chip" data-category="Creative">Creative</button><button class="filter-chip" data-category="Food & drink">Food & drink</button><button class="filter-chip" data-category="Community">Community</button></div><label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="event-search" placeholder="Find your thing..." aria-label="Search events" /><kbd>⌘ K</kbd></label></div>
+      <div class="event-grid" id="event-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><span>✳</span><p>No events found. Try another search.</p><button class="text-button" id="clear-search">Clear search ↗</button></div>
+      <div class="events-footer"><span><span class="live-dot"></span> GOOD THINGS, HAPPENING SOON</span><div class="footer-actions"><button class="text-button" id="manage-events">Manage gatherings <span aria-hidden="true">⚙</span></button><button class="text-button" id="show-all">Show all gatherings <span aria-hidden="true">↗</span></button></div></div>
+    </section>
+
+    <section class="manifesto" id="about"><span class="manifesto-spark">✳</span><div class="eyebrow">LESS SCROLLING. MORE STORIES.</div><h2>The best plans<br />start <span class="serif-accent">with people.</span></h2><p>Afterhours is your local guide to the nights worth leaving home for. Find your crowd, try something new, and make the ordinary feel electric.</p><a href="#events" class="manifesto-link">Find your next night <span>↗</span></a><div class="manifesto-decoration" aria-hidden="true">a.</div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">a.</span><span>afterhours<span class="brand-period">.</span></span></a><span>Good people. Better plans. <span class="footer-heart">♥</span></span><a href="#home">BACK TO TOP ↑</a></footer>
+
+  <dialog class="event-dialog" id="event-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Close event details">×</button><div class="dialog-image"></div><div class="dialog-content"><div class="eyebrow dialog-category"></div><h2 id="dialog-title"></h2><p class="dialog-description"></p><div class="dialog-meta"></div><button class="button button-dark dialog-register">Save me a seat <span>↗</span></button></div></dialog>
+
+  <dialog class="register-dialog" id="register-dialog" aria-labelledby="register-title"><button class="dialog-close" aria-label="Close registration form">×</button><div class="form-heading"><div class="eyebrow">YOUR GOOD THING AWAITS</div><h2 id="register-title">Save your <span class="serif-accent">seat.</span></h2><p>Just a few details and you’re in.</p></div><form id="registration-form" novalidate><label>Full name<input name="name" autocomplete="name" placeholder="e.g. Alex Morgan" required minlength="2"/><span class="field-error"></span></label><label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required/><span class="field-error"></span></label><label>Phone number<input name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" required/><span class="field-error"></span></label><label>Your event<select name="event" required><option value="">Choose a gathering</option></select><span class="field-error"></span></label><button class="button button-dark submit-button" type="submit">Count me in <span>↗</span></button><p class="form-note">Your details stay with us. We’ll only use them for this event.</p></form><div class="success-message" id="success-message" role="status" hidden><span>✳</span><h3>You’re on the list!</h3><p>We’ve saved your seat. Keep an eye on your inbox for the details.</p><button class="button button-dark success-close">Lovely, thanks</button></div></dialog>
+
+  <dialog class="manage-dialog" id="manage-dialog" aria-labelledby="manage-title"><button class="dialog-close" aria-label="Close event manager">×</button><div class="manage-heading"><div><div class="eyebrow">YOUR AFTERHOURS LINEUP</div><h2 id="manage-title">Manage <span class="serif-accent">gatherings.</span></h2><p>Add an event or update the details. Changes appear on the page right away.</p></div><button class="button button-dark" id="new-event">Add a gathering <span>＋</span></button></div><div class="manage-list" id="manage-list"></div><form class="event-editor" id="event-editor" hidden novalidate><h3 id="editor-title">Add a gathering</h3><input type="hidden" name="id"/><div class="editor-grid"><label>Event name<input name="title" required maxlength="70" placeholder="The Saturday Flower Club"/><span class="field-error"></span></label><label>Category<select name="category" required><option>Wellness</option><option>Creative</option><option>Food &amp; drink</option><option>Community</option></select><span class="field-error"></span></label><label>Date<input name="date" type="date" required/><span class="field-error"></span></label><label>Time<input name="time" required placeholder="6:00 PM – 8:00 PM"/><span class="field-error"></span></label><label>Venue<input name="venue" required placeholder="Studio name, neighborhood"/><span class="field-error"></span></label><label>Address<input name="address" placeholder="Street address"/><span class="field-error"></span></label><label>Price<input name="price" required placeholder="$25 or Free"/><span class="field-error"></span></label><label>Available spots<input name="seats" type="number" min="0" required value="10"/><span class="field-error"></span></label><label class="editor-wide">Photo URL <span class="optional-label">(optional)</span><input name="image" type="url" placeholder="https://… (leave blank for a sample photo)"/><span class="field-error"></span></label><label class="editor-wide">Short description<textarea name="description" rows="3" required maxlength="280" placeholder="What will guests experience?" ></textarea><span class="field-error"></span></label></div><div class="editor-actions"><button type="button" class="text-button" id="cancel-editor">Cancel</button><button type="submit" class="button button-dark">Save gathering <span>↗</span></button></div></form></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
